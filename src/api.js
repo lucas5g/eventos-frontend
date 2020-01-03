@@ -1,10 +1,18 @@
 import axios from 'axios'
 
+const baseUrl = () => {
+    const hostname = window.location.hostname
+    if(hostname === 'localhost'){
+        return 'http://localhost:3333'
+    }
+    return 'http://api.eventos.detec.site:3333'
+
+}
+
 const api = axios.create({
-    baseURL: `http://localhost:3333`
-        //baseURL: `http://csa.api.com/eventos/api/index.php`
-        //baseURL: `http://csa.eventos.com/api/index.php`
+    baseURL: baseUrl()
 }) 
+
 
 
 const apis =  {
@@ -25,6 +33,5 @@ const apis =  {
        
 
 }
-
 
 export default apis

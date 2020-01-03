@@ -8,6 +8,13 @@ const NavBar = (props) => {
 
         //** */
     }, [])
+
+    function logout() {
+        console.log('logout')
+        localStorage.clear()
+        window.location.reload()
+    }
+
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark purple-gradient fixed-top">
@@ -28,7 +35,7 @@ const NavBar = (props) => {
                         <a href="#/" className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">{localStorage.getItem('name')}</a>
                         <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <Link className="dropdown-item" to="#/">Sair</Link>
+                            <Link className="dropdown-item" to="#/" onClick={()=>logout()}>Sair</Link>
                         </div>
                     </li>
                 </ul>
