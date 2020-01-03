@@ -5,7 +5,7 @@ import './Login.css'
 
 const Login = () => {
 
-    const [username, setUser ] = useState('lucas.assuncao11')
+    const [username, setUser ] = useState('lucas.assuncao')
     const [password, setPassword ] = useState('Sic7c8sic')
     const [alert, setAlert ] = useState(false)
 
