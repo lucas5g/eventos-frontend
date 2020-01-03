@@ -1,0 +1,51 @@
+.home{
+    background-image: url("https://cdn.pixabay.com/photo/2015/05/15/14/50/concert-768722_960_720.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    min-width: 100%;
+    min-height: 100%;
+    
+}
+
+.home h2{
+    font-weight: 500;
+    color: white;
+    background: #00000061;
+    padding: 15px;
+}
+
+.home h3{
+    font-weight: 500;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    font-size:30px;
+}
+
+
+/*
+.text-img {
+    position: absolute;
+    margin-top: -550px;
+    font-weight: 500;
+    color: white;
+   
+    width: 100%;
+    padding: 15px;
+    text-shadow: 2px 2px 2px black;
+  }
+  .text-img-conteudo {
+    position: absolute;
+    margin-top: -450px;
+    font-weight: 500;
+    color: white;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+  }
+  /**/

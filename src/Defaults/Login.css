@@ -1,0 +1,17 @@
+.login{
+    background-image: url("https://cdn.pixabay.com/photo/2015/05/15/14/50/concert-768722_960_720.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    min-width: 100%;
+    min-height: 100%;
+    
+}
+
+
+.login .card{
+    margin-top: 10em;
+
+}

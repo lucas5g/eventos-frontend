@@ -1,0 +1,25 @@
+body{
+  background: #8000800d;
+}
+.card-body{
+  background: #f3f5f7cf;
+}
+.pt-custom{
+  padding-top: 80px;
+}
+
+.list-group-item:hover{
+  cursor:pointer;
+  background: #673ab738;
+}
+
+.nav-item{
+  font-weight: 400;
+}
+.nav-item:hover{
+  font-weight: 500;
+  transition-delay: .1s;
+}
+.mt-custom{
+  margin-top:100px;
+}
