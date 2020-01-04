@@ -5,8 +5,8 @@ import './Login.css'
 
 const Login = () => {
 
-    const [username, setUser ] = useState('lucas.assuncao')
-    const [password, setPassword ] = useState('Sic7c8sic')
+    const [username, setUser ] = useState('')
+    const [password, setPassword ] = useState('')
     const [alert, setAlert ] = useState(false)
 
     async function  handleLogin(e){
@@ -23,9 +23,11 @@ const Login = () => {
             window.location.reload()
         }catch (e){
      
-            if(e.response)
+            if(!e.response){
+                return setAlert('Erro no Servidor!')
+            }
 
-            /*
+            
             let { message } = e.response.data[0]
             
             console.log(message)
@@ -36,13 +38,9 @@ const Login = () => {
             if(message === 'Invalid user password'){
                 return setAlert('Senha Inválida')
             }
-            /**/
-           
-            return  setAlert('Usuário ou Senha Inválido')
         }
         
     }
-
    
     return (
         <div className="container-fluid login">
@@ -61,7 +59,7 @@ const Login = () => {
                         }
                         <div className="card-body px-lg-5">
                             <form className="text-center" onSubmit={ handleLogin } >
-                                <input type="text" className="form-control mb-4" placeholder="Usuário" value={ username }
+                                <input type="text" className="form-control mb-4" placeholder="Usuário"
                                     onChange={e => setUser(e.target.value)}/>
     
                                 <input type="password" className="form-control mb-4" placeholder="Password" value={ password }

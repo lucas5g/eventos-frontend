@@ -36,7 +36,7 @@ class App extends Component{
 					<Router >
 						<>
 						<NavBar />
-						<Route exact={true} path='/' component={Home} />
+						<Route exact={true} path='/' component={StudentsList} />
 						<Route path='/students' component = {StudentsList}/>
 						
 						<Redirect from='*' to='/' />        

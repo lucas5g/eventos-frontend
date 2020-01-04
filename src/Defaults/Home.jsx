@@ -1,10 +1,6 @@
 import React from 'react'
 import './Home.css'
 
-/*
-import Nav from '../Defaults/NavBar'
-import Footer from '../Defaults/Footer'
-/** */
 const Home = (props) => {
     return(
         <div className="container-fluid home pt-custom">

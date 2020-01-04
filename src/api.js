@@ -10,21 +10,25 @@ const baseUrl = () => {
 }
 
 const api = axios.create({
-    baseURL: baseUrl()
+    baseURL: baseUrl(),
+    headers:{
+        Authorization: 'Bearer '+localStorage.getItem('token')
+    }
+
 }) 
-
-
 
 const apis =  {
     //apis students
-    getStudents: () => api.get('/students'),
+    getStudents: () => api.get(`/students`),
     getStudentsRa:(ra) => api.get(`/students/${ra}`),
-    getStudentsSearch: (search) => api.get(`/students/search/${search}`),
     //invitations
     getInvitationsRa: (ra) => api.get(`/invitationsStudents/ra/${ra}`),
 
     //invitationsStudents
-    postInvitationsStudents:(obj) => api.post(`/invitationsStudents/post/`,obj),
+    //postInvitationsStudents:(obj) => api.post(`/invitationsStudents/post/`,obj),
+    getStudentsInvitations:() => api.get(`studentInvitations`),
+    filterStudentsInvitations:(filter) => api.get(`studentInvitations/${filter}`),
+
 
     //user
     postAuthenticate:(obj) => api.post(`/authenticate/`, obj),
