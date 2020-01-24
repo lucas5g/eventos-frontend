@@ -27,7 +27,7 @@ const Login = () => {
                 return setAlert('Erro no Servidor!')
             }
 
-            
+           /* 
             let { message } = e.response.data[0]
             
             console.log(message)
@@ -38,6 +38,7 @@ const Login = () => {
             if(message === 'Invalid user password'){
                 return setAlert('Senha Inválida')
             }
+            /** */
         }
         
     }
