@@ -3,9 +3,9 @@ import axios from 'axios'
 const baseUrl = () => {
     const hostname = window.location.hostname
     if(hostname === 'localhost'){
-        return 'http://localhost:3333'
+        return 'http://localhost:8002'
     }
-    return 'http://api.eventos.detec.site:3333'
+    return 'http://api.eventos.detec.site:8002'
 
 }
 
@@ -16,7 +16,7 @@ const api = axios.create({
     }
 
 }) 
-
+/*
 const apis =  {
     //apis students
     getStudents: () => api.get(`/students`),
@@ -37,5 +37,6 @@ const apis =  {
        
 
 }
-
-export default apis
+/** */
+//export default apis
+export default api
