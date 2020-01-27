@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, Button } from 'react-bootstrap'
 import api from '../services/api'
 
 function StudentsModalForm(props) {
   console.log(props)
-  const [student, setStudent] = useState([])
+  //const [student, setStudent] = useState(props.student)
   const [invitations, setInvitations] = useState([])
-  
-  useEffect(() => {
-    console.log('montou')
-
-    if (props.student.ra) {
-      loadInvitations(props.student.ra)
-    }
-
-  }, [props.student.ra])
+  /*
+  async function getStudent(){
+    let { data } = await api(`/students/${props.ra}`)
+    setStudent(data[0])
+    console.log(data)
+  }
+ // getStudent()
   /** */
   function handleClick(invitation_id, ra) {
     let obj = { invitation_id, ra }
@@ -41,6 +39,7 @@ function StudentsModalForm(props) {
 
       })
   }
+  //loadInvitations(ra)
   return (
     <Modal
       {...props}

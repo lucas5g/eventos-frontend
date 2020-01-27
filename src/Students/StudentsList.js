@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+//import { Modal, Button } from 'react-bootstrap'
+
 import api from '../services/api'
 
 import Modal from './StudentsForm'
@@ -8,7 +10,11 @@ const StudentsList = () => {
   const [filter, setFilter] = useState('')
   const [students, setStudents] = useState([])
   const [studentModal, setStudentModal] = useState('')
-  const [modalShow, setModalShow] = useState(false)
+  const [show, setShow] = useState(false)
+  //const [invitations, setInvitations] = useState([])
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   useEffect(() => {
     document.title = 'Alunos e País'
@@ -22,9 +28,9 @@ const StudentsList = () => {
     setFilter(e.target.value)
     getStudents(filter)
   }
-  
+
   async function getStudents(filter) {
-    if(filter){
+    if (filter) {
       let { data } = await api.get(`/students/search/${filter}`)
       setStudents(data)
       return;
@@ -34,10 +40,11 @@ const StudentsList = () => {
   }
   /** */
   async function handleClick(ra) {
-    
-    //let { data } = await api.get(`/students/${ra}`)
-    setStudentModal(ra)
-    setModalShow(true)
+
+    let { data } = await api.get(`/students/${ra}`)
+    setStudentModal(data[0])
+    //setStudentModal(ra)
+    handleShow()
     //console.log(data)
     /** */
 
@@ -73,7 +80,7 @@ const StudentsList = () => {
           </ul>
         </div>
       </div>
-      <Modal student={studentModal} show={modalShow}  />
+      <Modal student={studentModal} show={show} onHide={handleClose} />
 
     </div>
   )
